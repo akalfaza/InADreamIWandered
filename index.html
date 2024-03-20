@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href='https://fonts.googleapis.com/css?family=GFS Didot' rel='stylesheet'> -->
+    <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
+
+    <title>In a dream I wandered</title>
+    <style>
+        /* Styling for clickable words */
+        body {
+            /* font-family: 'GFS Didot'; */
+            font-family: 'EB Garamond';
+            background-color: #f0f0f0;
+        }
+
+        .clickable {
+            color: #808080;
+            font-size: 26px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .clickable:hover {
+            color: #ffffff;
+        }
+
+        .refreshButton {
+            bottom:10px;
+            font-size: 26px;
+            cursor: pointer;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .refreshButton:hover {
+            color: #ffffff;
+        }
+
+        h1{
+            text-align: center;
+        }
+        p {
+            font-size: 26px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>In a dream I wandered</h1>
+    <!-- Original Poem -->
+    <div id="original-poem">
+        <p>
+            In a <span class="clickable" onclick="expand('dream')">dream</span> I wandered,<br>
+            through a <span class="clickable" onclick="expand('river')">river</span> of time,<br>
+        </p>
+    </div>
+
+    <!-- Function to expand the poem -->
+    <script>
+        function expand(theme) {
+            var expandedPoem = '';
+            switch (theme) {
+                // DREAM PATH
+                case 'dream':
+                    expandedPoem = `
+                    <p>
+            In a <span class="clickable" onclick="expand('dream')">dream</span> I wandered,<br>
+            through a <span class="clickable" onclick="expand('river')">river</span> of time,<br>
+            </p>
+            <p>
+            In a dream I wandered,<br>
+            through a <span class="clickable" onclick="expand('forest')">forest</span> of <span class="clickable" onclick="expand('whispers')">whispers</span>.
+            </p>
+        `;
+                    break;
+                case 'whispers':
+                    expandedPoem = `
+                    <p>
+                In a <span class="clickable" onclick="expand('dream')">dream</span> I wandered,<br>
+                through a <span class="clickable" onclick="expand('river')">river</span> of time,<br>
+                </p>
+            <p>
+            In a dream I wandered,<br>
+            through a <span class="clickable" onclick="expand('forest')">forest</span> of <span class="clickable" onclick="expand('whispers')">whispers</span>.
+            </p>
+
+            <p>
+            The <span class="clickable" onclick="expand('trees')">trees</span> revealed their secrets<br>
+            and the <span class="clickable" onclick="expand('moon')">moon</span> shined 
+            </p>
+        `;
+                    break;
+                case 'forest':
+                    expandedPoem = `
+                    <p>
+                In a <span class="clickable" onclick="expand('dream')">dream</span> I wandered,<br>
+                through a <span class="clickable" onclick="expand('river')">river</span> of time,<br>
+                </p>
+            <p>
+            In a dream I wandered,<br>
+            through a <span class="clickable" onclick="expand('forest')">forest</span> of <span class="clickable" onclick="expand('whispers')">whispers</span>.
+            </p>
+
+            <p>
+            Among tall trees I <span class="clickable" onclick="expand('walked')">walked</span><br>
+            beneath the moonlight's <span class="clickable" onclick="expand('gentle')">gentle</span> grace
+            </p>
+        `;
+                    break;
+                case 'walked':
+                    expandedPoem = `
+                    <p>
+                In a <span class="clickable" onclick="expand('dream')">dream</span> I wandered,<br>
+                through a <span class="clickable" onclick="expand('river')">river</span> of time,<br>
+                </p>
+            <p>
+            In a dream I wandered,<br>
+            through a <span class="clickable" onclick="expand('forest')">forest</span> of <span class="clickable" onclick="expand('whispers')">whispers</span>.
+            </p>
+
+            <p>
+            Among tall trees I <span class="clickable" onclick="expand('walked')">walked</span><br>
+            beneath the moonlight's <span class="clickable" onclick="expand('gentle')">gentle</span> grace
+            </p>
+            <p>
+            I listened to nature's symphony <br>
+            and melodies of wind and trees set me free.
+            </p>
+            <div class="refreshButton" onclick="location.reload()">
+            Start again
+            </div>
+        `;
+                    break;
+                case 'gentle':
+                    expandedPoem = `
+                    <p>
+                In a <span class="clickable" onclick="expand('dream')">dream</span> I wandered,<br>
+                through a <span class="clickable" onclick="expand('river')">river</span> of time,<br>
+                </p>
+            <p>
+            In a dream I wandered,<br>
+            through a <span class="clickable" onclick="expand('forest')">forest</span> of <span class="clickable" onclick="expand('whispers')">whispers</span>.
+            </p>
+
+            <p>
+            Among tall trees I <span class="clickable" onclick="expand('walked')">walked</span><br>
+            beneath the moonlight's <span class="clickable" onclick="expand('gentle')">gentle</span> grace
+            </p>
+            <p>
+            I found peace<br>
+            in the nature's calm movement.
+            </p>
+            <div class="refreshButton" onclick="location.reload()">
+            Start again
+            </div>
+        `;
+                    break;
+                case 'moon':
+                    expandedPoem = `
+                    <p>
+                In a <span class="clickable" onclick="expand('dream')">dream</span> I wandered,<br>
+                through a <span class="clickable" onclick="expand('river')">river</span> of time,<br>
+                </p>
+            <p>
+            In a dream I wandered,<br>
+            through a <span class="clickable" onclick="expand('forest')">forest</span> of <span class="clickable" onclick="expand('whispers')">whispers</span>.
+            </p>
+
+            <p>
+            The <span class="clickable" onclick="expand('trees')">trees</span> revealed their secrets<br>
+            and the <span class="clickable" onclick="expand('moon')">moon</span> shined
+            </p>
+
+            <p>
+                Illuminating paths unknown,<br>
+                the moon danced with the stars. 
+            </p>
+
+          <div class="refreshButton" onclick="location.reload()">
+            Start again
+            </div>
+        `;
+                    break;
+                case 'trees':
+                    expandedPoem = `
+                    <p>
+                In a <span class="clickable" onclick="expand('dream')">dream</span> I wandered,<br>
+                through a <span class="clickable" onclick="expand('river')">river</span> of time,<br>
+                </p>
+            <p>
+            In a dream I wandered,<br>
+            through a <span class="clickable" onclick="expand('forest')">forest</span> of <span class="clickable" onclick="expand('whispers')">whispers</span>.
+            </p>
+
+            <p>
+            The <span class="clickable" onclick="expand('trees')">trees</span> revealed their secrets<br>
+            and the <span class="clickable" onclick="expand('moon')">moon</span> shined
+            </p>
+
+            <p>
+                Beneath the towering trees,<br>
+                I found myself pleasently lost.
+            </p>
+
+          <div class="refreshButton" onclick="location.reload()">
+            Start again
+            </div>
+        `;
+                    break;
+                // RIVER PATH
+                case 'river':
+                    expandedPoem = `
+                    <p>
+            In a <span class="clickable" onclick="expand('dream')">dream</span> I wandered,<br>
+            through a <span class="clickable" onclick="expand('river')">river</span> of time,<br>
+            </p>
+            <p>
+            Along the river's peaceful <span class="clickable" onclick="expand('flow')">flow</span>,<br>
+            I let my <span class="clickable" onclick="expand('thoughts')">thoughts</span> drift.
+          </p>
+        `;
+                    break;
+                case 'thoughts':
+                    expandedPoem = `
+                    <p>
+            In a <span class="clickable" onclick="expand('dream')">dream</span> I wandered,<br>
+            through a <span class="clickable" onclick="expand('river')">river</span> of time,<br>
+            </p>
+            <p>
+            Along the river's peaceful <span class="clickable" onclick="expand('flow')">flow</span>,<br>
+            I let my <span class="clickable" onclick="expand('thoughts')">thoughts</span> drift.
+          </p>
+          <p>
+          I found <span class="clickable" onclick="expand('clarity')">clarity</span> in the <span class="clickable" onclick="expand('silence')">silence</span>,<br>
+        meditating on my thoughts
+          </p>
+        `;
+                    break;
+                case 'flow':
+                    expandedPoem = `
+                    <p>
+            In a <span class="clickable" onclick="expand('dream')">dream</span> I wandered,<br>
+            through a <span class="clickable" onclick="expand('river')">river</span> of time,<br>
+            </p>
+            <p>
+            Along the river's peaceful <span class="clickable" onclick="expand('flow')">flow</span>,<br>
+            I let my <span class="clickable" onclick="expand('thoughts')">thoughts</span> drift.
+          </p>
+          <p>
+            In <span class="clickable" onclick="expand('nature')">nature's</span> embrace, <br>
+            my <span class="clickable" onclick="expand('worries')">worries</span> washed away
+          </p>
+        `;
+                    break;
+                    case 'nature':
+                    expandedPoem = `
+                    <p>
+            In a <span class="clickable" onclick="expand('dream')">dream</span> I wandered,<br>
+            through a <span class="clickable" onclick="expand('river')">river</span> of time,<br>
+            </p>
+            <p>
+            Along the river's peaceful <span class="clickable" onclick="expand('flow')">flow</span>,<br>
+            I let my <span class="clickable" onclick="expand('thoughts')">thoughts</span> drift.
+          </p>
+          <p>
+            In <span class="clickable" onclick="expand('nature')">nature's</span> embrace, <br>
+            my <span class="clickable" onclick="expand('worries')">worries</span> washed away
+          </p>
+          <p>
+            Beneath the open sky so wide,<br>
+            my troubles eased.
+          </p>
+          <div class="refreshButton" onclick="location.reload()">
+            Start again
+            </div>
+        `;
+                    break;
+                    case 'worries':
+                    expandedPoem = `
+                    <p>
+            In a <span class="clickable" onclick="expand('dream')">dream</span> I wandered,<br>
+            through a <span class="clickable" onclick="expand('river')">river</span> of time,<br>
+            </p>
+            <p>
+            Along the river's peaceful <span class="clickable" onclick="expand('flow')">flow</span>,<br>
+            I let my <span class="clickable" onclick="expand('thoughts')">thoughts</span> drift.
+          </p>
+          <p>
+            In <span class="clickable" onclick="expand('nature')">nature's</span> embrace, <br>
+            my <span class="clickable" onclick="expand('worries')">worries</span> washed away
+          </p>
+          <p>
+            Peace settled in,<br>
+            calmness bloomed.
+          </p>
+          <div class="refreshButton" onclick="location.reload()">
+            Start again
+            </div>
+        `;
+                    break;
+                case 'silence':
+                    expandedPoem = `
+                    <p>
+            In a <span class="clickable" onclick="expand('dream')">dream</span> I wandered,<br>
+            through a <span class="clickable" onclick="expand('river')">river</span> of time,<br>
+            </p>
+            <p>
+            Along the river's peaceful <span class="clickable" onclick="expand('flow')">flow</span>,<br>
+            I let my <span class="clickable" onclick="expand('thoughts')">thoughts</span> drift.
+          </p>
+          <p>
+          I found <span class="clickable" onclick="expand('clarity')">clarity</span> in the <span class="clickable" onclick="expand('silence')">silence</span>,<br>
+          meditating on my thoughts
+          </p>
+          <p>
+          In the stillness of the night,<br>
+          I as surrounded by solace. 
+          </p>
+          <div class="refreshButton" onclick="location.reload()">
+            Start again
+            </div>
+        `;
+                    break;
+                case 'clarity':
+                    expandedPoem = `
+                    <p>
+            In a <span class="clickable" onclick="expand('dream')">dream</span> I wandered,<br>
+            through a <span class="clickable" onclick="expand('river')">river</span> of time,<br>
+            </p>
+            <p>
+            Along the river's peaceful <span class="clickable" onclick="expand('flow')">flow</span>,<br>
+            I let my <span class="clickable" onclick="expand('thoughts')">thoughts</span> drift.
+          </p>
+          <p>
+          I found <span class="clickable" onclick="expand('clarity')">clarity</span> in the <span class="clickable" onclick="expand('silence')">silence</span>,<br>
+        meditating on my thoughts
+          </p>
+          <p>
+          In the quiet,<br>
+          I saw clear and fear left. 
+          </p>
+          <div class="refreshButton" onclick="location.reload()">
+            Start again
+            </div>
+        `;
+                    break;
+                default:
+                    expandedPoem = `
+          <p>
+            In a <span class="clickable" onclick="expand('dream')">dream</span> I wandered,<br>
+            through a <span class="clickable" onclick="expand('river')">river</span> of time,<br>
+          </p>
+        `;
+            }
+            document.getElementById('original-poem').innerHTML = expandedPoem;
+        }
+    </script>
+
+</body>
+
+</html>
